@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    background-image: url(NKJ56_taketomishimanoumitosora_TP_V.jpg);
+    background-position: top;
+}
+
+.container{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+}
+
+.nav-items{
+    padding: 0.5rem 1rem;
+    list-style: none;
+    margin-right: 1rem;
+}
+
+.nav-items a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+.title-container{
+    position: absolute;
+    width: 50%;
+    height: auto;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+
+.title{
+    color: rgb(231, 231, 231);
+    padding: 0 2rem;
+}
+
+.title h1{
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.title p{
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: rgb(177, 177, 177);
+    width: 85%;
+    margin: 1rem 0;
+}
+
+.btn{
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(0, 114, 255);
+    color: white;
+}
+
+/*** making responsive ****/
+@media only screen and (max-width: 1085px){
+    .nav-menu{
+        padding: 0.5rem;
+    }
+
+    .title h1{
+        font-size: 1.8rem;
+    }    
+
+    .title p{
+        width: 100%;
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+
+    .btn{
+        padding: 0.5rem 1rem;
+        margin-top: 1.7rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .title-container{
+        width: 55%;
+    }
+
+    .title{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .nav-menu{
+        padding: 0rem;
+    }
+
+    .nav-items{
+        font-size: 0.9rem;
+    }
+
+    .title-container{
+        width: 60%;
+    }
+
+    .title h1{
+        color: white;
+    }
+
+    .title p{
+        color: rgb(205, 205, 205);
+    }
+}
+
+@media only screen and (max-width: 846px){
+    .nav-items{
+        margin-right: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 790px){
+    .nav-items{
+        margin-right: 0rem;
+    }
+
+    .title-container{
+        width: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .title p{
+        color: rgb(248, 248, 248);
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .nav-menu{
+        width: 100%;
+    }
+
+    .title-container{
+        width: 100%;
+    }
+}
+
+@media only scree and (max-width: 630px){
+    .nav-menu{
+         width: 100%;
+    }
+
+    .title-container{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 544px){
+    .nav-menu{
+        width: 100%;
+   }
+
+   .title-container{
+       width: 100%;
+   }
+}
+
+@media only screen and (max-width: 472px){
+    .nav-menu{
+        width: 100%;
+   }
+
+   .title-container{
+       width: 100%;
+   }
+}
+/*xx** making responsive ***xx*/
+
+#img1 {
+    background-color: transparent;
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    z-index: -1;
+  }
+  .menu_list li{
+    color: #fff;
+  }
+  #btnstyle button {
+    margin-top: -5px;
+    scale: 1.5;
+    background: transparent;
+    border: none;
+    position: fixed;
+
+  }
+  #btnstyle button svg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 5px;
+  }
+
+  /* body {
+    background-image: url(refurb-mbp13touchbar-space-gallery-2018_GEO_JP.jpeg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+  } */
+  .hidemenu {
+    opacity: 0;
+    left: -300px;
+    top: 0;
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    transition: all 0.5s;
+  }
+  .move {
+    opacity: 1;
+    left: 0px;
+    top: 0px;
+    width: 10rem;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 10;
+  }
+  
+
+  #ul2 {
+    list-style: none;
+}
+
+#unko {
+    display: inline;
+    width: auto;
+    max-width: 600px;
+}
+@media only screen and (max-width: 900px){
+    #ul2 {
+        display: contents;
+    }
+}
+.menu_list {
+    list-style: none;
+    padding: 10px;
+}
+
+#glid-list {
+    padding: 10px;
+    transform: translate(0, 80px);
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 50vh;
+    color: #494949;
+}
+#glid-list strong {
+    border-radius: 5px;
+    background-color: #fff;
+    /* border: 1px solid rgb(51, 51, 196); */
+    padding: 10px;
+    display: grid;
+    box-shadow: #494949 12px 5px 8px 1px;
+    overflow-wrap: anywhere;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+#glid-list strong:hover {
+    background-color: rgba(0,0,0,.1);
+}
+#glid-list strong p{
+    font-size: 16px;
+    /* line-height: 0; */
+}
+#glid-list strong a {
+    padding: 10px;
+    border-bottom: 1px solid;
+}
+#glid-list strong :empty {
+    border: none;
+    display: none;
+    opacity: 0;
+}
+#glid-list strong a:empty {
+    border: none;
+    display: none;
+    opacity: 0;
+}
+#logo {
+    position: absolute;
+    left: 50%;
+    top: 22%;
+    transform: translate(-50%, 0);
+
+}
+body {
+    overflow: scroll;
+}
+
+.footer {
+    padding: 0 40px;
+    display: ruby-text;
+    width: 100%;
+    height: auto;
+    background-color: #2c2c2c;
+    border-top: 4px solid #000;
+    text-align: center;
+}
+
+.footer p {
+    color: #fff;
+    padding: 10px;
+    top: -20px;
+    position: relative;
+}
+#tag {
+    color: #a8a8a8;
+}
