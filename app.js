@@ -6,16 +6,16 @@
   });
 
   const page = 0;
-
+  const host = "https://shitblog.netlify.app";
   async function bodyFetch(id) {
-    const res = await fetch(`/.netlify/functions/main?id=${id}`);
+    const res = await fetch(`${host}/.netlify/functions/main?id=${id}`);
     const body = res.json();
     console.log(body)
     return body;
   }
   
   async function contentrequest(page) {
-    const res = await fetch(`/.netlify/functions/main?page=${page}`);
+    const res = await fetch(`${host}/.netlify/functions/main?page=${page}`);
     console.log(res);
     const titlelist = res.json();
     console.log(titlelist)
