@@ -41,15 +41,19 @@
     }
     tag(
       url="javascript:(function(){const url=function capture(e='webm'){const options={'webm':{'type':'video/webm','mineType':'video/webm; codecs=vp9'},'mp4':{'type':'video/mp4','mineType':'video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"'}};const video=document.querySelector('video');if(video){video.currentTime=0;video.play();setTimeout(()=>{const stream=video.captureStream();const option={mimeType:options[e].mineType};const recorder=new MediaRecorder(stream,option);const chunks=[];recorder.ondataavailable=event=>{if(event.data.size>0)chunks.push(event.data)};recorder.onstop=()=>{const option={type:options[e].type};const blob=new Blob(chunks,{type:option});const objectURL=URL.createObjectURL(blob);const a=document.createElement('a');a.href=objectURL;a.download=`video.${e}`;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(objectURL)};recorder.start();const end=video.duration*1000||5000;setTimeout(()=>{recorder.stop();video.pause()},end)},100)}else return!1};var d=document,cs='position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:114514;padding:10px;';var m=(t='div')=>{return d.createElement(t)};var ap=(e)=>{return d.body.appendChild(e)};var div=m(),form=m('form'),sele=m('select');sele.style.cssText=cs;var ao=(e,v,tx,script=null)=>{var op=m('option');op.value=v;op.textContent=tx;e.appendChild(op);if(script)e.addEventListener('change',(event)=>{if(event.target.value===v)script()})};ao(sele,'MP4','mp4',()=>{alert('mp4');capture('mp4')});ao(sele,'WEBM','webm',()=>{alert('webm');capture('webm')});form.appendChild(sele);div.appendChild(form);ap(div)})();",
-      title = 'video capture v1.0'
+      title = 'video capture v1.0 [any]'
     )
     tag(
       url="javascript:(function(){function download(url){const link=document.createElement('a');link.href=url;link.download=url.split('/').pop();document.body.appendChild(link);link.click();document.body.removeChild(link);}function createMenu(){const div=document.createElement('div');div.innerHTML='<a id=\"videosrc\" href=\"#\">video.src</a><input id=\"inputurl\" type=\"text\" placeholder=\"Enter video URL\"><button id=\"enter\">Enter</button>';div.style.position='absolute';div.style.top='50%';div.style.left='50%';div.style.transform='translate(-50%,-50%)';document.body.appendChild(div);document.getElementById('enter').onclick=function(){const url=document.getElementById('inputurl').value;if(url){download(url);}};}createMenu();})();",
-      title = 'video dl'
+      title = 'video download [x.com ~ any]'
     )
     tag(
       url="javascript:alert(`Hello!%20%24%7Blocation.origin%7D`);const%20i%3Ddocument.querySelectorAll(%22.image%22);for%20(const%20l%20of%20i)%20%7Bconst%20s%3Dl.querySelector(%22a%22).querySelector(%22img%22).src;const%20e%3Ddocument.createElement(%22div%22);e.innerHTML%3D%22%3Ch1%3EDL%3C%2Fh1%3E%22;e.addEventListener(%22click%22,%20()%3D%3E%20%7Bd(s);%7D);l.appendChild(e);%7Dfunction%20d(u)%7Bconst%20l%3Ddocument.createElement(%22a%22);l.href%3Du;l.download%3Du.split(%22%2F%22).pop();document.body.appendChild(l);l.click();document.body.removeChild(l);%7D",
       title = 'gif download [sex.com]'
+    )
+    tag(
+      url=`javascript:(function(){var d=document;var m=(t='div')=>{return d.createElement(t)};var ap=(e)=>{return d.body.appendChild(e)};const applyStyleToTweets=()=>{const tweets=d.querySelectorAll('article');tweets.forEach(e=>{const img=e.querySelector('[alt="画像"]');if(img&&!e.id.includes('adding')){e.id='adding';const btn=m();btn.innerHTML='DL';btn.style.cssText='padding:10px;cursor:pointer;font-weight:900;border:3px solid #4f4f4f;background:rgb(0,0,0,0.5);';btn.addEventListener('click',()=>{const imgSrc=img.src;const link=m('a');link.href=imgSrc;link.download=imgSrc.split('/').pop();link.style.display='none';document.body.appendChild(link);link.click();document.body.removeChild(link);});const roleGroup=e.querySelector('[role="group"]');if(roleGroup){roleGroup.appendChild(btn);}}});};applyStyleToTweets();const observer=new MutationObserver((mutations)=>{mutations.forEach((mutation)=>{if(mutation.addedNodes.length||mutation.removedNodes.length){applyStyleToTweets();}});});observer.observe(d.body,{childList:true,subtree:true});})();`,
+      title = "X(Twitter) image download [x.com]"
     )
     </script>
 </body>
