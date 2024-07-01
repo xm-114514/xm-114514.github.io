@@ -52,9 +52,11 @@
       title = 'gif download [sex.com]'
     )
     tag(
-      url=`javascript:(function(){var d=document;var m=(t='div')=>{return d.createElement(t)};var ap=(e)=>{return d.body.appendChild(e)};const removeNameParameter=(url)=>{const urlObj=new URL(url);if(urlObj.searchParams.has('name')){urlObj.searchParams.delete('name')}return urlObj.toString()};const applyStyleToTweets=()=>{const tweets=d.querySelectorAll('article');tweets.forEach(e=>{const img=e.querySelector('[alt="画像"]');if(img&&!e.id.includes('adding')){e.id='adding';const btn=m();btn.innerHTML='DL';btn.style.cssText='padding:10px;cursor:pointer;font-weight:900;border:3px solid #4f4f4f;background:rgb(0,0,0,0.5);';btn.addEventListener('click',()=>{let imgSrc=img.src;if(imgSrc.includes('.jpg')||imgSrc.includes('.png')){imgSrc=removeNameParameter(imgSrc)}const link=m('a');link.href=imgSrc;link.download=imgSrc.split('/').pop();link.style.display='none';document.body.appendChild(link);link.click();document.body.removeChild(link);});const roleGroup=e.querySelector('[role="group"]');if(roleGroup){roleGroup.appendChild(btn)}})};};applyStyleToTweets();const observer=new MutationObserver`,
-      title = "image download [x.com]"
+      url = `javascript:(function(){var d=document;var m=(t='div')=>{return d.createElement(t)};var ap=(e)=>{return d.body.appendChild(e)};const removeNameParameter=(url)=>{const urlObj=new URL(url);if(urlObj.searchParams.has('name')){urlObj.searchParams.delete('name')}return urlObj.toString()};const applyStyleToTweets=()=>{const tweets=d.querySelectorAll('article');tweets.forEach(e=>{const img=e.querySelector('[alt="画像"]');if(img&&!e.id.includes('adding')){e.id='adding';const btn=m();btn.innerHTML='DL';btn.style.cssText='padding:10px;cursor:pointer;font-weight:900;border:3px solid #4f4f4f;background:rgb(0,0,0,0.5);';btn.addEventListener('click',()=>{let imgSrc=img.src;if(imgSrc.includes('.jpg')||imgSrc.includes('.png')){imgSrc=removeNameParameter(imgSrc)}const link=m('a');link.href=imgSrc;link.download=imgSrc.split('/').pop();link.style.display='none';document.body.appendChild(link);link.click();document.body.removeChild(link)});const roleGroup=e.querySelector('[role="group"]');if(roleGroup){roleGroup.appendChild(btn)}}})};applyStyleToTweets();const observer=new MutationObserver((mutations)=>{mutations.forEach((mutation)=>{if(mutation.addedNodes.length||mutation.removedNodes.length){applyStyleToTweets()}})});observer.observe(d.body,{childList:true,subtree:true})})();`,
+      title = "X(Twitter) image download [x.com]"
     )
     </script>
+
+    
 </body>
 </html>
