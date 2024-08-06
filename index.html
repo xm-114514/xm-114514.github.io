@@ -57,7 +57,7 @@
     )
     tag(
       url = `(function(){const button=document.createElement('button');button.innerText='Download Video';button.style.position='absolute';button.style.top='50%';button.style.left='50%';button.style.transform='translate(-50%, -50%)';button.style.padding='10px 20px';button.style.backgroundColor='#007BFF';button.style.color='white';button.style.border='none';button.style.borderRadius='5px';button.style.cursor='pointer';button.addEventListener('click',function(){const videoUrl=document.querySelector('video').src;const xhr=new XMLHttpRequest();xhr.open('GET',videoUrl,true);xhr.responseType='blob';xhr.onload=function(){if(xhr.status===200){const blob=xhr.response;const link=document.createElement('a');const url=window.URL.createObjectURL(blob);link.href=url;link.download='video.mp4';document.body.appendChild(link);link.click();setTimeout(()=>{document.body.removeChild(link);window.URL.revokeObjectURL(url);},100);}else{console.error('Failed to download video:',xhr.statusText);}};xhr.onerror=function(){console.error('Network error');};xhr.send();});document.body.appendChild(button);})();`;
-      title "X gif/video download"
+      title = "X gif/video download"
     )
     </script>
 
