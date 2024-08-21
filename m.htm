@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+      background-color: #808080; 
+    }
+    #flex {
+      display: flex;
+    }
+    #flex > * {
+      margin-right: 5px;
+    }
+  </style>
+  <div id="flex">
+    <button id="btn" onclick="auto = !auto; document.querySelector('#btn').innerHTML = auto ? 'stop' : 'start';">stop</button>
+    <button id="modeBtn" onclick="isRegular = !isRegular; document.querySelector('#modeBtn').innerHTML = isRegular ? 'Regular Polygon Mode' : 'Normal Mode';">Normal Mode</button>
+    <input id="inp" type="text">
+    <div id="result"></div>
+    <div id="value"></div>
+  </div>
+  <script>
+    let isRegular = false;
+    document.querySelector("#inp").addEventListener("input", (e) => {
+      const value = parseFloat(e.target.value);
+      auto = false;
+      drawPolygon(value, 100);
+      const result = document.querySelector("#result");
+      result.innerHTML = f(value);
+      if (value === "" || value === null) {
+        auto = true;
+      }
+    });
+  </script>
+  <script>
+
+    const box = document.createElement("canvas");
+    box.width = 500;
+    box.height = 500;
+    document.body.appendChild(box);
+    const ctx = box.getContext("2d");
+    
+    const f = (n) => (180 * (n - 2)) / n; 
+
+    function drawPolygon(n, radius) {
+      ctx.clearRect(0, 0, box.width, box.height);
+      ctx.beginPath();
+      ctx.strokeStyle = "#FFFFFF";
+      ctx.lineWidth = 3;
+      
+      const angle = (2 * Math.PI) / n; 
+
+      if (isRegular) {
+        for (let i = 0; i < n; i++) {
+          ctx.lineTo(
+            box.width / 2 + radius * Math.cos(i * angle * 2), 
+            box.height / 2 + radius * Math.sin(i * angle * 2)
+          );
+        }
+      } else {
+        ctx.moveTo(
+          box.width / 2 + radius * 1, // Math.cos(0)
+          box.height / 2 + 0 // radius * Math.sin(0)
+        );
+        for (let i = 1; i <= n; i++) {
+          ctx.lineTo(
+            box.width / 2 + radius * Math.cos(i * angle), 
+            box.height / 2 + radius * Math.sin(i * angle)
+          );
+        }
+      }
+      ctx.closePath();
+      ctx.stroke();
+    }
+    let n = 0;
+    let auto = true;
+    setInterval(() => {
+      if (auto) {
+        drawPolygon(n, 100);
+        n = n + 0.1;
+        document.querySelector("#value").innerHTML = n;
+        if (n > 10) n = 0;
+      }
+    }, 100);
+
+  </script>
+</body>
+</html>
