@@ -27,21 +27,18 @@
   <script>
     let isRegular = false;
     document.querySelector("#inp").addEventListener("input", (e) => {
+      
       const value = parseFloat(e.target.value);
-      auto = false;
+      (value == "" || isNaN(value) || value == null) ? auto = true : auto = false;
       drawPolygon(value, 100);
-      const result = document.querySelector("#result");
-      result.innerHTML = f(value);
-      if (value === "" || value === null) {
-        auto = true;
-      }
+   
     });
   </script>
   <script>
 
     const box = document.createElement("canvas");
-    box.width = 500;
-    box.height = 500;
+    box.width = 500; // window.innerWidth * 0.8 ||
+    box.height = 500; // window.innerHeight * 0.8 ||
     document.body.appendChild(box);
     const ctx = box.getContext("2d");
     
@@ -76,6 +73,10 @@
       }
       ctx.closePath();
       ctx.stroke();
+
+      const result = document.querySelector("#result");
+      if (result) result.innerHTML = f(n).toFixed(1);
+
     }
     let n = 0;
     let auto = true;
@@ -83,7 +84,7 @@
       if (auto) {
         drawPolygon(n, 100);
         n = n + 0.1;
-        document.querySelector("#value").innerHTML = n;
+        document.querySelector("#value").innerHTML = n.toFixed(1);
         if (n > 10) n = 0;
       }
     }, 100);
