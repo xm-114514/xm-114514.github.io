@@ -29,13 +29,15 @@ body {
   transform-origin: left;
   backface-visibility: hidden;
   transition: transform 1s ease;
+  margin: 0 auto;
+
 }
 
 #page-back {
   transform: rotateY(180deg);
 }
 
-#prev-btn, #next-btn {
+#prev-btn, #next-btn,button {
   margin-top: 20px;
   padding: 10px 20px;
   border: none;
@@ -45,7 +47,7 @@ body {
   cursor: pointer;
 }
 
-#prev-btn:hover, #next-btn:hover {
+#prev-btn:hover, #next-btn:hover,button:hover {
   background-color: #0056b3;
 }
 
