@@ -6,21 +6,34 @@ function removeword() {
   currentIndex = (currentIndex + 1) % words.length;
   resetPages('next');
   updatePages(true);
+  localStorage.setItem("words",JSON.stringify(words));
 }
 
+function formatData() {
+  localStorage.clear();
+}
 
 const frontPage = document.getElementById('page-front');
 const backPage = document.getElementById('page-back');
 const nextButton = document.getElementById('next-btn');
 const prevButton = document.getElementById('prev-btn');
 // APIから単語データを取得
-fetch('https://raw.githubusercontent.com/xm-114514/xm-114514.github.io/main/words.json')
+const APIdata = JSON.parse(JSON.stringify(localStorage.getItem("words")));
+if (APIdata != null) {
+  console.log("localStorage参照")
+  words = JSON.parse(APIdata);
+  updatePages(true);
+} else {
+  console.log("raw")
+  fetch('https://raw.githubusercontent.com/xm-114514/xm-114514.github.io/main/words.json')
     .then(response => response.json())
     .then(data => {
         words = data;
         updatePages(true);
+        localStorage.setItem("words",JSON.stringify(data));
     })
     .catch(error => console.error('Error fetching words:', error));
+}
 function updatePages(e) {
   if (e) {
     setCardContent(frontPage, currentIndex);
@@ -52,7 +65,7 @@ prevButton.addEventListener('click', () => {
     updatePages(false);
     setTimeout(() => {
         resetPages('prev');
-    }, 500);
+    }, 0);
 });
 function resetPages(direction) {
     if (direction === 'next') {
