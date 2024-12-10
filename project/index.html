@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            width: 100%;
+        }
+        #container {
+            margin: 10px 10px;
+          margin: 10px auto;
+          justify-content: center;
+            display: flex;
+            gap: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+        #threeCanvas {
+            width: 600px;
+            height: 400px;
+        }
+        #dataCanvas {
+            width: 300px;
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+      <canvas id="threeCanvas"></canvas>
+      <canvas id="dataCanvas" width="300" height="400"></canvas>
+    </div>
+    <br>
+    <h4 style="margin-left: 250px; margin-top: -20px; margin-bottom: -10px;">Highlight.js / LaTeX</h4>
+    <div id="TeX_container">
+        <div id="mathJS" class="javascript">
+<pre style="margin: 0;">
+<code class="javascript">// #1
+const g = 9.8; // 重力加速度 (m/s^2)
+const v0 = 10; // 初速度 (m/s)
+const angle = Math.PI / 4; // 発射角度 (45度)
+  
+// 2
+const velocityX = v0 * Math.cos(angle); // 水平方向の速度
+const xPosition = velocityX * t; // 水平方向の位置
+ball.position.x = xPosition; // ボールの水平方向の位置更新
+
+// 3.
+const velocityY = v0 * Math.sin(angle); // 鉛直方向の速度
+const yPosition = velocityY * t - 0.5 * g * t ** 2; // 鉛直方向の位置
+ball.position.y = yPosition; // ボールの鉛直方向の位置更新
+
+// 4.
+const velocity = {
+  x: v0 * Math.cos(angle), // 水平方向の初速度
+  y: v0 * Math.sin(angle), // 鉛直方向の初速度
+};
+// 5.
+// 瞬間速度の大きさ
+const velocityMagnitude = Math.sqrt(velocity.x ** 2 + (velocity.y - g * t) ** 2);
+
+// 6.
+const mass = 1; // ボールの質量 (kg)
+const kineticEnergy = 0.5 * mass * velocityMagnitude ** 2; // 運動エネルギー
+const potentialEnergy = mass * g * ball.position.y; // 位置エネルギー
+
+
+</code>
+</pre>
+        </div>
+          <div id="mathTeX">
+            \(
+              \text{基本法則として} \quad F = ma, \quad E = K + U  
+            \) <br>
+            #1 初期条件 
+            \( g = 9.8 \, \mathrm{m/s^2}, \quad v_0 = 10 \, \mathrm{m/s}, \quad \theta = \frac{\pi}{4}  \)<br>
+            
+            #2 水平方向の位置
+            \( x(t) = v_0 \cos(\theta) \cdot t  \)<br>
+            
+            #3 鉛直方向の位置
+            \( y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2  \)<br>
+            
+            #4 速度の分解
+            \( v_x = v_0 \cos(\theta), \quad v_y = v_0 \sin(\theta)  \)<br>
+            
+            #5 瞬間速度の大きさ
+            \( v(t) = \sqrt{v_x^2 + (v_y - g \cdot t)^2}  \)<br>
+            
+            #6 エネルギー
+            \( K = \frac{1}{2} m v^2, \quad U = m g y  \)<br>
+            
+          </div>
+    </div>
+  <style>
+      #TeX_container {
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+          display: flex;
+      }
+      #TeX_container code {
+          width: fit-content;
+          border-radius: 15px;
+      }
+      #mathTeX {
+          padding: 10px;
+      }
+      h4 {
+          font-family: math;
+      }
+  </style>
+  <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+          hljs.highlightAll();
+      });
+  </script>
+    <script type="module" src="scripts/main.js"></script>
+        <!-- MathJaxのCDN(淫夢) -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <!-- Highlight.jsのCDN(淫夢) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+</body>
+</html>
