@@ -81,7 +81,7 @@
     input.addEventListener('input', function() {
       const value = encoderDecoder.encode(input.value);
       encodedOutput.value = value;
-      encodedOutput.style.color = value.length > 140 ? "red" : "#fff";
+      encodedOutput.style.color = value.length*0.5 > 140 ? "red" : "#fff";
     });
     decodedInput.addEventListener('input', function() {
       decodedOutput.value = encoderDecoder.decode(decodedInput.value);
