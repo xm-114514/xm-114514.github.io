@@ -1,0 +1,24 @@
+<a href="javascript:(function(){
+    var ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36 Edg/100.0.0.0';
+    Object.defineProperty(navigator,'userAgent',{get:function(){return ua;}});
+    Object.defineProperty(navigator,'platform',{get:function(){return 'Win32';}});
+    alert('User-AgentをPC版に偽装しました。');
+    
+    if(window.RTCPeerConnection){
+        window.RTCPeerConnection=function(){
+            alert('WebRTCがブロックされました。');
+            return null;
+        };
+    }
+
+    Object.defineProperty(window,'innerWidth',{get:function(){return 1920;}});
+    Object.defineProperty(window,'innerHeight',{get:function(){return 1080;}});
+    alert('画面サイズをPCサイズに偽装しました。');
+
+    var style=document.createElement('style');
+    style.innerHTML='body { zoom: 100%; } * { touch-action: none !important; }';
+    document.head.appendChild(style);
+    alert('PCモード表示に変更しました。');
+})();">
+🚀 **全設定適用**
+</a>
